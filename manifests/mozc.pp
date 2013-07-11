@@ -66,6 +66,7 @@ class packages {
       'make': ;
       'python': ;
       'subversion': ;
+      'git-core': ;
       'openjdk-6-jdk': ;
 
       'pkg-config': ;
