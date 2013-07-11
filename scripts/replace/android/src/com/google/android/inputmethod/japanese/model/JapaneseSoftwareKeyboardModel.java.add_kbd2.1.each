@@ -1,0 +1,2 @@
+        case QWERTY%(kbd)s:
+          return getQwerty%(kbd)sKeyboardSpecification(keyboardMode);

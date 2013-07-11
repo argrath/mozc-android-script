@@ -1,0 +1,8 @@
+  private static KeyboardSpecification getQwerty%(kbd)sKeyboardSpecification(KeyboardMode keyboardMode) {
+    switch (keyboardMode) {
+      case KANA: return KeyboardSpecification.QWERTY%(kbd)s_KANA;
+      case ALPHABET: return KeyboardSpecification.QWERTY%(kbd)s_ALPHABET;
+    }
+    throw new IllegalArgumentException("Unknown keyboard mode: " + keyboardMode);
+  }
+

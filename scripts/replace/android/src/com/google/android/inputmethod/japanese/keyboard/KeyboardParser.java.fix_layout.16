@@ -1,0 +1,8 @@
+    int popUpWidth = Math.round(getDimensionOrFraction(
+        attributes.peekValue(popUpWidthIndex), keyboardWidth, 0, metrics));
+    int popUpHeight = Math.round(getDimensionOrFraction(
+        attributes.peekValue(popUpHeightIndex), keyboardWidth, 0, metrics));
+    int popUpXOffset = Math.round(getDimensionOrFraction(
+        attributes.peekValue(popUpXOffsetIndex), keyboardWidth, 0, metrics));
+    int popUpYOffset = Math.round(getDimensionOrFraction(
+        attributes.peekValue(popUpYOffsetIndex), keyboardWidth, 0, metrics));

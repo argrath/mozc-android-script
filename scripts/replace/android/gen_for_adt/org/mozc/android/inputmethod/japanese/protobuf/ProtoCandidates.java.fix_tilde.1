@@ -1,0 +1,27 @@
+            case 42: {
+              org.mozc.android.inputmethod.japanese.protobuf.ProtoCandidates.Annotation.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = annotation_.toBuilder();
+              }
+              annotation_ = input.readMessage(org.mozc.android.inputmethod.japanese.protobuf.ProtoCandidates.Annotation.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(annotation_);
+                annotation_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+          }
+        }
+		String v_ = ((com.google.protobuf.ByteString) value_).toStringUtf8();
+		String d_ = annotation_.getDescription();
+		if (v_.equals("~") && (d_.indexOf("波ダッシュ") >= 0 || d_.indexOf("波ﾀﾞｯｼｭ") >= 0)) {
+			annotation_ = annotation_.toBuilder().setDescription("[半] チルダ").build();
+		}
+		if (v_.equals("〜") && d_.indexOf("波ダッシュ") < 0 && d_.indexOf("波ﾀﾞｯｼｭ") < 0) {
+			annotation_ = annotation_.toBuilder().setDescription("[全] 波ダッシュ").build();
+		}
+		if (v_.equals("～") && d_.indexOf("チルダ") < 0 && d_.indexOf("ﾁﾙﾀﾞ") < 0) {
+			annotation_ = annotation_.toBuilder().setDescription("[全] チルダ").build();
+		}
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {

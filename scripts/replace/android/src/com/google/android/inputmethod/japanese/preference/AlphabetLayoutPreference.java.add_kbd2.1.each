@@ -1,0 +1,6 @@
+,
+      new Item(
+          KeyboardLayout.TWELVE_KEY_QWERTY%(kbd)s,
+          R.xml.kbd_12keys_qwerty%(kbd)s_abc,
+          R.string.pref_keyboard_layout_title_qwerty%(kbd)s,
+          R.string.pref_keyboard_layout_description_qwerty%(kbd)s)

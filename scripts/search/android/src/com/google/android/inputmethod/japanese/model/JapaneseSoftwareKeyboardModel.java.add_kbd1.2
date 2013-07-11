@@ -1,0 +1,10 @@
+  private static KeyboardSpecification getQwertyKeyboardSpecification(KeyboardMode keyboardMode) {
+    switch (keyboardMode) {
+      case KANA: return KeyboardSpecification.QWERTY_KANA;
+      case KANA_NUMBER: return KeyboardSpecification.QWERTY_KANA_NUMBER;
+      case ALPHABET: return KeyboardSpecification.QWERTY_ALPHABET;
+      case ALPHABET_NUMBER: return KeyboardSpecification.QWERTY_ALPHABET_NUMBER;
+    }
+    throw new IllegalArgumentException("Unknown keyboard mode: " + keyboardMode);
+  }
+

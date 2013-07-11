@@ -1,0 +1,1 @@
+          case TWELVE_KEY_QWERTY%(kbd)s: return KeyboardSpecification.TWELVE_KEY_QWERTY%(kbd)s_ALPHABET;

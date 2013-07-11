@@ -1,0 +1,5 @@
+      new Item(
+          KeyboardLayout.QWERTY%(kbd)s,
+          R.xml.kbd_qwerty%(kbd)s_kana,
+          R.string.pref_keyboard_layout_title_qwerty%(kbd)s,
+          R.string.pref_keyboard_layout_description_qwerty%(kbd)s),

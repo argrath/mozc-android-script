@@ -1,0 +1,18 @@
+    QWERTY%(kbd)s_KANA(
+        new KeyboardSpecificationName("QWERTY%(kbd)s_KANA", 0, 2, 0),
+        R.xml.kbd_qwerty%(kbd)s_kana,
+        CompositionMode.HIRAGANA,
+        SpecialRomanjiTable.QWERTY_MOBILE_TO_HIRAGANA,
+        SpaceOnAlphanumeric.SPACE_OR_CONVERT_KEEPING_COMPOSITION,
+        false,
+        CrossingEdgeBehavior.DO_NOTHING),
+
+    QWERTY%(kbd)s_ALPHABET(
+        new KeyboardSpecificationName("QWERTY%(kbd)s_ALPHABET", 0, 2, 0),
+        R.xml.kbd_qwerty%(kbd)s_abc,
+        CompositionMode.HALF_ASCII,
+        SpecialRomanjiTable.QWERTY_MOBILE_TO_HALFWIDTHASCII,
+        SpaceOnAlphanumeric.COMMIT,
+        false,
+        CrossingEdgeBehavior.COMMIT_WITHOUT_CONSUMING),
+
