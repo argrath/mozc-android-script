@@ -131,7 +131,7 @@ class android {
         require => Exec['android-sdk extract'],
         notify  => Exec['android-sdk chown'],
 #        command => "/bin/echo -e 'y\\n' | $sdkhome/tools/android update sdk -u",
-        command => "/bin/echo -e 'y\\n' | $sdkhome/tools/android update sdk -u -a -t $filter",
+        command => "/bin/sh -c '(for i in 1 2 3 4 5 ; do /bin/echo y; /bin/sleep 2; done)' | $sdkhome/tools/android update sdk -u -a -t $filter 1>sdk.log 2>&1",
         creates => $sdkfonts;
 
       'android-sdk chown':
