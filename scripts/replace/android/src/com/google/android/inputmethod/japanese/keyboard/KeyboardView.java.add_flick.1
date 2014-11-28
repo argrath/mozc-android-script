@@ -1,0 +1,15 @@
+  public void setCapsState(boolean state) {
+    if (state ? (metaState == MetaState.CAPS_LOCK) : (metaState != MetaState.CAPS_LOCK && metaState != MetaState.SHIFT)) { return; }
+    metaState = state ? MetaState.CAPS_LOCK : MetaState.UNMODIFIED;
+    backgroundSurface.requestUpdateKeyboard(keyboard, metaState);
+    invalidate();
+  }
+
+  public void setAltState(boolean state) {
+    if (state == (metaState == MetaState.ALT)) { return; }
+    metaState = state ? MetaState.ALT : MetaState.UNMODIFIED;
+    backgroundSurface.requestUpdateKeyboard(keyboard, metaState);
+    invalidate();
+  }
+
+  public void setPopupEnabled(boolean popupEnabled) {

@@ -1,0 +1,14 @@
+        <Flick mozc:direction="right">
+          <KeyEntity mozc:sourceId="29"
+                     mozc:keyCode="@integer/uchar_latin_small_letter_s"
+                     mozc:keyIcon="@raw/twelvekeys__alphabet__5__07">
+            <PopUp mozc:popUpIcon="@raw/qwerty__keyicon__latin_capital_letter_s" />
+          </KeyEntity>
+        </Flick>
+        <Flick mozc:direction="down">
+          <KeyEntity mozc:sourceId="0"
+                     mozc:keyCode="@integer/uchar_digit_seven"
+                     mozc:keyIcon="@raw/twelvekeys__alphabet__5__07">
+            <PopUp mozc:popUpIcon="@raw/qwerty__keyicon__digit_seven" />
+          </KeyEntity>
+        </Flick>

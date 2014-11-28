@@ -1,0 +1,75 @@
+        {
+          'action_name': 'gen_toggle_flick-hiragana_typing_model',
+          'variables': {
+            'input_files': [
+              '<(mozc_dir)/data/typing/typing_model_toggle_flick-hiragana.tsv',
+            ],
+          },
+          'inputs': [
+            '<(mozc_dir)/composer/internal/gen_typing_model.py',
+            '<@(input_files)',
+          ],
+          'outputs': [
+            '<(gen_out_dir)/internal/typing_model_toggle_flick-hiragana.h',
+          ],
+          'action': [
+            'python',
+            '<(mozc_dir)/composer/internal/gen_typing_model.py',
+            '--input_path',
+            '<@(input_files)',
+            '--output_path',
+            '<@(_outputs)',
+            '--variable_name',
+            'ToggleFlickHiragana'
+          ],
+        },
+        {
+          'action_name': 'gen_niko_flick-hiragana_typing_model',
+          'variables': {
+            'input_files': [
+              '<(mozc_dir)/data/typing/typing_model_niko_flick-hiragana.tsv',
+            ],
+          },
+          'inputs': [
+            '<(mozc_dir)/composer/internal/gen_typing_model.py',
+            '<@(input_files)',
+          ],
+          'outputs': [
+            '<(gen_out_dir)/internal/typing_model_niko_flick-hiragana.h',
+          ],
+          'action': [
+            'python',
+            '<(mozc_dir)/composer/internal/gen_typing_model.py',
+            '--input_path',
+            '<@(input_files)',
+            '--output_path',
+            '<@(_outputs)',
+            '--variable_name',
+            'NikoFlickHiragana'
+          ],
+        },
+        {
+          'action_name': 'gen_bell_flick-hiragana_typing_model',
+          'variables': {
+            'input_files': [
+              '<(mozc_dir)/data/typing/typing_model_bell_flick-hiragana.tsv',
+            ],
+          },
+          'inputs': [
+            '<(mozc_dir)/composer/internal/gen_typing_model.py',
+            '<@(input_files)',
+          ],
+          'outputs': [
+            '<(gen_out_dir)/internal/typing_model_bell_flick-hiragana.h',
+          ],
+          'action': [
+            'python',
+            '<(mozc_dir)/composer/internal/gen_typing_model.py',
+            '--input_path',
+            '<@(input_files)',
+            '--output_path',
+            '<@(_outputs)',
+            '--variable_name',
+            'BellFlickHiragana'
+          ],
+        },

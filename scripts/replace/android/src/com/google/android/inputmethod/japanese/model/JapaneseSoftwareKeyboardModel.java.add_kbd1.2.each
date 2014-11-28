@@ -2,6 +2,7 @@
     switch (keyboardMode) {
       case KANA: return KeyboardSpecification.QWERTY%(kbd)s_KANA;
       case ALPHABET: return KeyboardSpecification.QWERTY%(kbd)s_ALPHABET;
+      case KANA_NUMBER: return KeyboardSpecification.TWELVE_KEY_TOGGLE_FLICK_NUMBER;
     }
     throw new IllegalArgumentException("Unknown keyboard mode: " + keyboardMode);
   }

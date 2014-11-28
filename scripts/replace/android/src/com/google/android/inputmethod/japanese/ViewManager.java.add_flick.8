@@ -1,0 +1,55 @@
+    if (primaryCode == keycodeInputMethod) {
+      if (mozcView != null) { mozcView.resetKeyboardViewState(); }
+      MozcUtil.requestShowInputMethodPicker(context);
+      return;
+    }
+
+    if (primaryCode == keycodePreferences) {
+      if (mozcView != null) { mozcView.resetKeyboardViewState(); }
+      menuDialogListener.onLaunchPreferenceActivitySelected(context);
+      return;
+    }
+
+    if (primaryCode == keycodeMushroom) {
+      if (mozcView != null) { mozcView.resetKeyboardViewState(); }
+      menuDialogListener.onShowMushroomSelectionDialogSelected(context);
+      return;
+    }
+
+    if (primaryCode == keycodeLayoutL || primaryCode == keycodeLayoutR) {
+      if (mozcView != null) { mozcView.resetKeyboardViewState(); }
+      int ord = japaneseSoftwareKeyboardModel.getKeyboardLayout().ordinal();
+      int max = KeyboardLayout.GODAN.ordinal();
+      sharedPreferences.edit().putString(
+       (sharedPreferences.getBoolean(PreferenceUtil.PREF_USE_PORTRAIT_KEYBOARD_SETTINGS_FOR_LANDSCAPE_KEY, true)
+        || context.getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE)
+         ? PreferenceUtil.PREF_PORTRAIT_KEYBOARD_LAYOUT_KEY : PreferenceUtil.PREF_LANDSCAPE_KEYBOARD_LAYOUT_KEY,
+       KeyboardLayout.values()[(ord + ((primaryCode == keycodeLayoutR) ? 1 : max)) % (max + 1)].name()).commit();
+      return;
+    }
+
+    if (primaryCode == keycodeCapsOn || primaryCode == keycodeCapsOff) {
+      if (mozcView == null) { return; }
+      mozcView.getKeyboardView().setCapsState(primaryCode == keycodeCapsOn);
+      return;
+    }
+
+    if (primaryCode == keycodeAltOn || primaryCode == keycodeAltOff) {
+      if (mozcView == null) { return; }
+      mozcView.getKeyboardView().setAltState(primaryCode == keycodeAltOn);
+      return;
+    }
+
+    if (primaryCode == keycodeHanSpace || primaryCode == keycodeZenSpace) {
+      if (eventListener == null) { return; }
+      SessionExecutor sessionExecutor = SessionExecutor.getInstanceInitializedIfNecessary(new SessionHandlerFactory(context), context);
+      sessionExecutor.setImposedConfig(Config.newBuilder().setSpaceCharacterForm((primaryCode == keycodeHanSpace)
+       ? FundamentalCharacterForm.FUNDAMENTAL_HALF_WIDTH : FundamentalCharacterForm.FUNDAMENTAL_FULL_WIDTH).build());
+      eventListener.onKeyEvent(createMozcKeyEvent(' ', touchEventList),
+       new PrimaryCodeKeyEvent(' '), japaneseSoftwareKeyboardModel.getKeyboardSpecification(), touchEventList);
+      sessionExecutor.setImposedConfig(Config.newBuilder().setSpaceCharacterForm(sharedPreferences.getBoolean(PreferenceUtil.PREF_SPACE_CHARACTER_FORM_KEY, false)
+       ? FundamentalCharacterForm.FUNDAMENTAL_HALF_WIDTH : FundamentalCharacterForm.FUNDAMENTAL_INPUT_MODE).build());
+      return;
+    }
+
+    if (primaryCode == keycodeSymbol) {

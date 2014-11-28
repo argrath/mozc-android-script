@@ -1,5 +1,5 @@
     TWELVE_KEY_QWERTY%(kbd)s_ALPHABET(
-        new KeyboardSpecificationName("TWELVE_KEY_QWERTY%(kbd)s_ALPHABET", 0, 2, 0),
+        new KeyboardSpecificationName("TWELVE_KEY_QWERTY%(kbd)s_ALPHABET", 0, 1, 0),
         R.xml.kbd_12keys_qwerty%(kbd)s_abc,
         CompositionMode.HALF_ASCII,
         SpecialRomanjiTable.QWERTY_MOBILE_TO_HALFWIDTHASCII,

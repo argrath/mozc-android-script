@@ -1,0 +1,27 @@
+    TWELVE_KEY_TOGGLE_FLICK_NUMBER(
+        new KeyboardSpecificationName("TWELVE_KEY_TOGGLE_FLICK_ALPHABET", 0, 1, 0),
+        R.xml.kbd_12keys_flick_123,
+        CompositionMode.HALF_ASCII,
+        SpecialRomanjiTable.TOGGLE_FLICK_TO_NUMBER,
+        SpaceOnAlphanumeric.COMMIT,
+        false,
+        CrossingEdgeBehavior.DO_NOTHING),
+
+    NIKO_FLICK_KANA(
+        new KeyboardSpecificationName("NIKO_FLICK_KANA", 0, 1, 0),
+        R.xml.kbd_niko_flick_kana,
+        CompositionMode.HIRAGANA,
+        SpecialRomanjiTable.NIKO_FLICK_TO_HIRAGANA,
+        SpaceOnAlphanumeric.SPACE_OR_CONVERT_KEEPING_COMPOSITION,
+        true,
+        CrossingEdgeBehavior.COMMIT_WITHOUT_CONSUMING),
+
+    BELL_FLICK_KANA(
+        new KeyboardSpecificationName("BELL_FLICK_KANA", 0, 1, 0),
+        R.xml.kbd_bell_flick_kana,
+        CompositionMode.HIRAGANA,
+        SpecialRomanjiTable.BELL_FLICK_TO_HIRAGANA,
+        SpaceOnAlphanumeric.SPACE_OR_CONVERT_KEEPING_COMPOSITION,
+        true,
+        CrossingEdgeBehavior.COMMIT_WITHOUT_CONSUMING),
+

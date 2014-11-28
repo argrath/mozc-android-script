@@ -1,0 +1,30 @@
+    case mozc::commands::Request::TOGGLE_FLICK_TO_HIRAGANA:
+      if (!g_typing_model_toggle_flick_hiragana.get()) {
+        g_typing_model_toggle_flick_hiragana.reset(new TypingModel(
+              kKeyCharacters_ToggleFlickHiragana,
+              kKeyCharactersSize_ToggleFlickHiragana,
+              kCostTable_ToggleFlickHiragana,
+              kCostTableSize_ToggleFlickHiragana,
+              kCostMappingTable_ToggleFlickHiragana));
+      }
+      return g_typing_model_toggle_flick_hiragana.get();
+    case mozc::commands::Request::NIKO_FLICK_TO_HIRAGANA:
+      if (!g_typing_model_niko_flick_hiragana.get()) {
+        g_typing_model_niko_flick_hiragana.reset(new TypingModel(
+              kKeyCharacters_NikoFlickHiragana,
+              kKeyCharactersSize_NikoFlickHiragana,
+              kCostTable_NikoFlickHiragana,
+              kCostTableSize_NikoFlickHiragana,
+              kCostMappingTable_NikoFlickHiragana));
+      }
+      return g_typing_model_niko_flick_hiragana.get();
+    case mozc::commands::Request::BELL_FLICK_TO_HIRAGANA:
+      if (!g_typing_model_bell_flick_hiragana.get()) {
+        g_typing_model_bell_flick_hiragana.reset(new TypingModel(
+              kKeyCharacters_BellFlickHiragana,
+              kKeyCharactersSize_BellFlickHiragana,
+              kCostTable_BellFlickHiragana,
+              kCostTableSize_BellFlickHiragana,
+              kCostMappingTable_BellFlickHiragana));
+      }
+      return g_typing_model_bell_flick_hiragana.get();

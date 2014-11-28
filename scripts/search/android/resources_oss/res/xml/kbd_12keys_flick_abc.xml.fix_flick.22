@@ -1,0 +1,7 @@
+        <Flick mozc:direction="right">
+          <KeyEntity mozc:sourceId="36"
+                     mozc:keyCode="@integer/uchar_latin_small_letter_z"
+                     mozc:keyIcon="@raw/twelvekeys__alphabet__5__09">
+            <PopUp mozc:popUpIcon="@raw/qwerty__keyicon__latin_capital_letter_z" />
+          </KeyEntity>
+        </Flick>

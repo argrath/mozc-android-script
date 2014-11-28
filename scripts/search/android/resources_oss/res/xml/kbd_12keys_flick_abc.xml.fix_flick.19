@@ -1,0 +1,7 @@
+        <Flick mozc:direction="up">
+          <KeyEntity mozc:sourceId="23"
+                     mozc:keyCode="@integer/uchar_latin_small_letter_o"
+                     mozc:keyIcon="@raw/twelvekeys__alphabet__5__06">
+            <PopUp mozc:popUpIcon="@raw/qwerty__keyicon__latin_capital_letter_o" />
+          </KeyEntity>
+        </Flick>

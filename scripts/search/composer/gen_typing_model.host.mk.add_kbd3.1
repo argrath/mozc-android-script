@@ -1,0 +1,13 @@
+### Rules for action "gen_toggle_flick-hiragana_typing_model":
+quiet_cmd_composer_composer_gyp_gen_typing_model_host_gen_toggle_flick_hiragana_typing_model = ACTION composer_composer_gyp_gen_typing_model_host_gen_toggle_flick_hiragana_typing_model $@
+cmd_composer_composer_gyp_gen_typing_model_host_gen_toggle_flick_hiragana_typing_model = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd composer; mkdir -p $(obj)/gen/composer/internal; python ../composer/internal/gen_typing_model.py --input_path ../data/typing/typing_model_toggle_flick-hiragana.tsv --output_path "$(obj)/gen/composer/internal/typing_model_toggle_flick-hiragana.h" --variable_name ToggleFlickHiragana
+
+$(obj)/gen/composer/internal/typing_model_toggle_flick-hiragana.h: obj := $(abs_obj)
+$(obj)/gen/composer/internal/typing_model_toggle_flick-hiragana.h: builddir := $(abs_builddir)
+$(obj)/gen/composer/internal/typing_model_toggle_flick-hiragana.h: TOOLSET := $(TOOLSET)
+$(obj)/gen/composer/internal/typing_model_toggle_flick-hiragana.h: composer/internal/gen_typing_model.py data/typing/typing_model_toggle_flick-hiragana.tsv FORCE_DO_CMD
+	$(call do_cmd,composer_composer_gyp_gen_typing_model_host_gen_toggle_flick_hiragana_typing_model)
+
+all_deps += $(obj)/gen/composer/internal/typing_model_toggle_flick-hiragana.h
+action_composer_composer_gyp_gen_typing_model_host_gen_toggle_flick_hiragana_typing_model_outputs := $(obj)/gen/composer/internal/typing_model_toggle_flick-hiragana.h
+

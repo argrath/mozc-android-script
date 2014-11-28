@@ -1,4 +1,4 @@
-export PATH=/opt/android-ndk-r8e:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:"$PATH"
+export PATH=$ANDROID_NDK:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:"$PATH"
 cd /home/vagrant/src
 python build_mozc.py build android/android.gyp:apk -c Debug_Android 2>&1 | tee /home/vagrant/build.log
 mkdir -p /vagrant/build/

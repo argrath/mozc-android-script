@@ -1,0 +1,10 @@
+    case mozc::commands::Request::TOGGLE_FLICK_TO_HIRAGANA:
+      if (!g_typing_model_toggle_flick_hiragana.get()) {
+        g_typing_model_toggle_flick_hiragana.reset(new TypingModel(
+              kKeyCharacters_ToggleFlickHiragana,
+              kKeyCharactersSize_ToggleFlickHiragana,
+              kCostTable_ToggleFlickHiragana,
+              kCostTableSize_ToggleFlickHiragana,
+              kCostMappingTable_ToggleFlickHiragana));
+      }
+      return g_typing_model_toggle_flick_hiragana.get();

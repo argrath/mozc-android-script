@@ -1,1 +1,6 @@
-boolean qwertyLayoutForAlphabet
+  private static KeyboardSpecification getGodanKeyboardSpecification(KeyboardMode keyboardMode) {
+    switch (keyboardMode) {
+      case KANA: return KeyboardSpecification.GODAN_KANA;
+      case ALPHABET: return KeyboardSpecification.QWERTY_ALPHABET;
+      case ALPHABET_NUMBER: return KeyboardSpecification.QWERTY_ALPHABET_NUMBER;
+    }

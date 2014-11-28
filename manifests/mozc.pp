@@ -1,19 +1,23 @@
-$user    = 'vagrant'
-$group   = 'vagrant'
-$homedir = "/home/$user"
-$wgetdir = '/opt'
-$instdir = '/opt'
-$sdkfile = 'android-sdk_r22.0.1-linux.tgz'
-$ndkfile = 'android-ndk-r8e-linux-x86.tar.bz2'
-$sdkpath = "$wgetdir/$sdkfile"
-$ndkpath = "$wgetdir/$ndkfile"
-$sdkhome = "$instdir/android-sdk-linux"
-$ndkhome = "$instdir/android-ndk-r8e"
+$user     = 'vagrant'
+$group    = 'vagrant'
+$homedir  = "/home/$user"
+$wgetdir  = '/opt'
+$instdir  = '/opt'
+$sdkfile  = 'android-sdk_r22.3-linux.tgz'
+$ndkfile  = 'android-ndk-r9c-linux-x86.tar.bz2'
+$sdkpath  = "$wgetdir/$sdkfile"
+$ndkpath  = "$wgetdir/$ndkfile"
+$sdkhome  = "$instdir/android-sdk-linux"
+$ndkhome  = "$instdir/android-ndk-r9c"
+$apiver   = 'android-19'
+$filter   = "build-tools-19.0.1,$apiver,platform-tool,tool,extra-android-support"
+$sdkfonts = "$sdkhome/platforms/$apiver/data/fonts"
 
 Exec {
-    timeout => 0,
-    user    => $user,
-    cwd     => $homedir,
+    timeout     => 0,
+    user        => $user,
+    cwd         => $homedir,
+    environment => ["ANDROID_SDK=$sdkhome", "ANDROID_NDK=$ndkhome", "ANDROID_API=$apiver"],
 }
 
 class samba {
@@ -66,7 +70,6 @@ class packages {
       'make': ;
       'python': ;
       'subversion': ;
-      'git-core': ;
       'openjdk-6-jdk': ;
 
       'pkg-config': ;
@@ -88,9 +91,13 @@ class android {
     }
 
     exec {
+      'android-env':
+        require => Class['packages'],
+        command => "/bin/echo 'export ANDROID_SDK=$sdkhome ANDROID_NDK=$ndkhome ANDROID_API=$apiver' >> .bashrc";
+
       'android-sdk get':
 #        require => Package['openjdk-6-jdk'],
-        require => Class['packages'],
+        require => Exec['android-env'],
         cwd     => $wgetdir,
         command => "/usr/bin/wget -N http://dl.google.com/android/$sdkfile";
 
@@ -122,7 +129,9 @@ class android {
       'android update sdk':
         require => Exec['android-sdk extract'],
         notify  => Exec['android-sdk chown'],
-        command => "/bin/echo -e 'y\\n' | $sdkhome/tools/android update sdk -u -t build-tools-17.0.0,extra-android-support,android-17,platform-tool,tool";
+#        command => "/bin/echo -e 'y\\n' | $sdkhome/tools/android update sdk -u",
+        command => "/bin/echo -e 'y\\n' | $sdkhome/tools/android update sdk -u -a -t $filter",
+        creates => $sdkfonts;
 
       'android-sdk chown':
         command => "/bin/chown -R $user.$group $sdkhome";
@@ -132,9 +141,9 @@ class android {
     }
 
     file {
-      '/usr/share/fonts/DroidSansFallbackFull.ttf': require => Exec['android update sdk'], source => "$sdkhome/platforms/android-17/data/fonts/DroidSansFallbackFull.ttf";
-      '/usr/share/fonts/MTLmr3m.ttf':               require => Exec['android update sdk'], source => "$sdkhome/platforms/android-17/data/fonts/MTLmr3m.ttf";
-      '/usr/share/fonts/MTLc3m.ttf':                require => Exec['android update sdk'], source => "$sdkhome/platforms/android-17/data/fonts/MTLc3m.ttf";
+      '/usr/share/fonts/DroidSansFallbackFull.ttf': require => Exec['android update sdk'], source => "$sdkfonts/DroidSansFallbackFull.ttf";
+      '/usr/share/fonts/MTLmr3m.ttf':               require => Exec['android update sdk'], source => "$sdkfonts/MTLmr3m.ttf";
+      '/usr/share/fonts/MTLc3m.ttf':                require => Exec['android update sdk'], source => "$sdkfonts/MTLc3m.ttf";
     }
 
 }

@@ -1,0 +1,7 @@
+      DrawableType drawableType = getKeyEntityForRendering(key, requestedMetaState, entry.getValue()).getKeyBackgroundDrawableType();
+      if (drawableType != DrawableType.PENTA_D_REGULAR_KEY_BACKGROUND
+       && drawableType != DrawableType.PENTA_U_REGULAR_KEY_BACKGROUND
+       && drawableType != DrawableType.PENTA_D_FUNCTION_KEY_BACKGROUND
+       && drawableType != DrawableType.PENTA_U_FUNCTION_KEY_BACKGROUND) {
+        canvas.clearRegion(key.getX() - offsetX, key.getY() - offsetY, key.getWidth(), key.getHeight());
+      }

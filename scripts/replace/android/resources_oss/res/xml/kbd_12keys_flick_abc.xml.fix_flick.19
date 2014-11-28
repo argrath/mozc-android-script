@@ -1,0 +1,21 @@
+        <Flick mozc:direction="up">
+          <KeyEntity mozc:sourceId="23"
+                     mozc:keyCode="@integer/uchar_latin_small_letter_o"
+                     mozc:keyIcon="@raw/twelvekeys__alphabet__5__06">
+            <PopUp mozc:popUpIcon="@raw/qwerty__keyicon__latin_capital_letter_o" />
+          </KeyEntity>
+        </Flick>
+        <Flick mozc:direction="right">
+          <KeyEntity mozc:sourceId="0"
+                     mozc:keyCode="@integer/uchar_asterisk"
+                     mozc:keyIcon="@raw/twelvekeys__alphabet__5__06">
+            <PopUp mozc:popUpIcon="@raw/qwerty__keyicon__asterisk" />
+          </KeyEntity>
+        </Flick>
+        <Flick mozc:direction="down">
+          <KeyEntity mozc:sourceId="0"
+                     mozc:keyCode="@integer/uchar_digit_six"
+                     mozc:keyIcon="@raw/twelvekeys__alphabet__5__06">
+            <PopUp mozc:popUpIcon="@raw/qwerty__keyicon__digit_six" />
+          </KeyEntity>
+        </Flick>

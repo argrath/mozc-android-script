@@ -1,0 +1,2 @@
+    keycodeBackspace = res.getInteger(R.integer.key_backspace);
+    keycodeEnter = res.getInteger(R.integer.key_enter);

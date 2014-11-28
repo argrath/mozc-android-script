@@ -1,1 +1,28 @@
-KeyboardLayout qwertyLayoutForAlphabet
+  private static KeyboardSpecification getGodanKeyboardSpecification(KeyboardMode keyboardMode, KeyboardLayout qwertyLayoutForAlphabet) {
+    switch (keyboardMode) {
+      case KANA: return KeyboardSpecification.GODAN_KANA;
+      case ALPHABET: {
+        switch (qwertyLayoutForAlphabet) {
+          case TWELVE_KEY_QWERTY:    return KeyboardSpecification.QWERTY_ALPHABET;
+          case TWELVE_KEY_QWERTY514: return KeyboardSpecification.QWERTY514_ALPHABET;
+          case TWELVE_KEY_QWERTY513: return KeyboardSpecification.QWERTY513_ALPHABET;
+          case TWELVE_KEY_QWERTY512: return KeyboardSpecification.QWERTY512_ALPHABET;
+          case TWELVE_KEY_QWERTY511: return KeyboardSpecification.QWERTY511_ALPHABET;
+          case TWELVE_KEY_QWERTY411: return KeyboardSpecification.QWERTY411_ALPHABET;
+          case TWELVE_KEY_QWERTY510: return KeyboardSpecification.QWERTY510_ALPHABET;
+          case TWELVE_KEY_QWERTY410: return KeyboardSpecification.QWERTY410_ALPHABET;
+          case TWELVE_KEY_QWERTY808: return KeyboardSpecification.QWERTY808_ALPHABET;
+          case TWELVE_KEY_QWERTY608: return KeyboardSpecification.QWERTY608_ALPHABET;
+          case TWELVE_KEY_QWERTY408: return KeyboardSpecification.QWERTY408_ALPHABET;
+          case TWELVE_KEY_QWERTY416: return KeyboardSpecification.QWERTY416_ALPHABET;
+          case TWELVE_KEY_QWERTY415: return KeyboardSpecification.QWERTY415_ALPHABET;
+          case TWELVE_KEY_QWERTY414: return KeyboardSpecification.QWERTY414_ALPHABET;
+          case TWELVE_KEY_QWERTY413: return KeyboardSpecification.QWERTY413_ALPHABET;
+          case TWELVE_KEY_QWERTY314: return KeyboardSpecification.QWERTY314_ALPHABET;
+          case TWELVE_KEY_QWERTY313: return KeyboardSpecification.QWERTY313_ALPHABET;
+        }
+        return KeyboardSpecification.TWELVE_KEY_TOGGLE_FLICK_ALPHABET;
+      }
+      case ALPHABET_NUMBER: return KeyboardSpecification.QWERTY_ALPHABET_NUMBER;
+      case KANA_NUMBER: return KeyboardSpecification.TWELVE_KEY_TOGGLE_FLICK_NUMBER;
+    }

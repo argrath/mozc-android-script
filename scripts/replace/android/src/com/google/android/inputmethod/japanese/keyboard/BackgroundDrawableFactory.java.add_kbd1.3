@@ -1,0 +1,165 @@
+      case TWELVEKEYS_FUNCTION_KEY_LIGHT_ON_BACKGROUND:
+        return new LayerDrawable(new Drawable[] {
+            createPressableDrawable(
+                new RectKeyDrawable(
+                    (int) (TWELVEKEYS_LEFT_OFFSET * density),
+                    (int) (TWELVEKEYS_TOP_OFFSET * density),
+                    (int) (TWELVEKEYS_RIGHT_OFFSET * density),
+                    (int) (TWELVEKEYS_BOTTOM_OFFSET * density),
+                    skinType.twelvekeysLayoutPressedFunctionKeyTopColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyBottomColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyHighlightColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyLightShadeColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyDarkShadeColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyShadowColor),
+                new RectKeyDrawable(
+                    (int) (TWELVEKEYS_LEFT_OFFSET * density),
+                    (int) (TWELVEKEYS_TOP_OFFSET * density),
+                    (int) (TWELVEKEYS_RIGHT_OFFSET * density),
+                    (int) (TWELVEKEYS_BOTTOM_OFFSET * density),
+                    skinType.twelvekeysLayoutReleasedFunctionKeyTopColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyBottomColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyHighlightColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyLightShadeColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyDarkShadeColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyShadowColor)),
+            new LightIconDrawable(
+                (int) ((QWERTY_TOP_OFFSET + QWERTY_LIGHT_TOP_OFFSET + QWERTY_LIGHT_RADIUS)
+                          * density),
+                (int) ((QWERTY_RIGHT_OFFSET + QWERTY_LIGHT_RIGHT_OFFSET + QWERTY_LIGHT_RADIUS)
+                          * density),
+                skinType.qwertyLightOnSignLightColor,
+                skinType.qwertyLightOnSignDarkColor,
+                skinType.qwertyLightOnSignShadeColor,
+                (int) (QWERTY_LIGHT_RADIUS * density))
+            });
+
+      case TWELVEKEYS_FUNCTION_KEY_LIGHT_OFF_BACKGROUND:
+        return new LayerDrawable(new Drawable[] {
+            createPressableDrawable(
+                new RectKeyDrawable(
+                    (int) (TWELVEKEYS_LEFT_OFFSET * density),
+                    (int) (TWELVEKEYS_TOP_OFFSET * density),
+                    (int) (TWELVEKEYS_RIGHT_OFFSET * density),
+                    (int) (TWELVEKEYS_BOTTOM_OFFSET * density),
+                    skinType.twelvekeysLayoutPressedFunctionKeyTopColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyBottomColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyHighlightColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyLightShadeColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyDarkShadeColor,
+                    skinType.twelvekeysLayoutPressedFunctionKeyShadowColor),
+                new RectKeyDrawable(
+                    (int) (TWELVEKEYS_LEFT_OFFSET * density),
+                    (int) (TWELVEKEYS_TOP_OFFSET * density),
+                    (int) (TWELVEKEYS_RIGHT_OFFSET * density),
+                    (int) (TWELVEKEYS_BOTTOM_OFFSET * density),
+                    skinType.twelvekeysLayoutReleasedFunctionKeyTopColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyBottomColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyHighlightColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyLightShadeColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyDarkShadeColor,
+                    skinType.twelvekeysLayoutReleasedFunctionKeyShadowColor)),
+            new LightIconDrawable(
+                (int) ((QWERTY_TOP_OFFSET + QWERTY_LIGHT_TOP_OFFSET + QWERTY_LIGHT_RADIUS)
+                          * density),
+                (int) ((QWERTY_RIGHT_OFFSET + QWERTY_LIGHT_RIGHT_OFFSET + QWERTY_LIGHT_RADIUS)
+                          * density),
+                skinType.qwertyLightOffSignLightColor,
+                skinType.qwertyLightOffSignDarkColor,
+                skinType.qwertyLightOffSignShadeColor,
+                (int) (QWERTY_LIGHT_RADIUS * density))
+            });
+
+      case PENTA_D_REGULAR_KEY_BACKGROUND:
+        return createPressableDrawable(
+            new PentaDKeyDrawable(
+                (int) (QWERTY_LEFT_OFFSET * density),
+                (int) (QWERTY_TOP_OFFSET * density),
+                (int) (QWERTY_RIGHT_OFFSET * density),
+                (int) (QWERTY_BOTTOM_OFFSET * density),
+                (int) (skinType.qwertyKeyRoundRadius * density),
+                skinType.qwertyLayoutPressedKeyTopColor,
+                skinType.qwertyLayoutPressedKeyBottomColor,
+                skinType.qwertyLayoutPressedKeyHighlightColor,
+                skinType.qwertyLayoutPressedKeyShadowColor),
+            new PentaDKeyDrawable(
+                (int) (QWERTY_LEFT_OFFSET * density),
+                (int) (QWERTY_TOP_OFFSET * density),
+                (int) (QWERTY_RIGHT_OFFSET * density),
+                (int) (QWERTY_BOTTOM_OFFSET * density),
+                (int) (skinType.qwertyKeyRoundRadius * density),
+                skinType.qwertyLayoutReleasedKeyTopColor,
+                skinType.qwertyLayoutReleasedKeyBottomColor,
+                skinType.qwertyLayoutReleasedKeyHighlightColor,
+                skinType.qwertyLayoutReleasedKeyShadowColor));
+
+      case PENTA_U_REGULAR_KEY_BACKGROUND:
+        return createPressableDrawable(
+            new PentaUKeyDrawable(
+                (int) (QWERTY_LEFT_OFFSET * density),
+                (int) (QWERTY_TOP_OFFSET * density),
+                (int) (QWERTY_RIGHT_OFFSET * density),
+                (int) (QWERTY_BOTTOM_OFFSET * density),
+                (int) (skinType.qwertyKeyRoundRadius * density),
+                skinType.qwertyLayoutPressedKeyTopColor,
+                skinType.qwertyLayoutPressedKeyBottomColor,
+                skinType.qwertyLayoutPressedKeyHighlightColor,
+                skinType.qwertyLayoutPressedKeyShadowColor),
+            new PentaUKeyDrawable(
+                (int) (QWERTY_LEFT_OFFSET * density),
+                (int) (QWERTY_TOP_OFFSET * density),
+                (int) (QWERTY_RIGHT_OFFSET * density),
+                (int) (QWERTY_BOTTOM_OFFSET * density),
+                (int) (skinType.qwertyKeyRoundRadius * density),
+                skinType.qwertyLayoutReleasedKeyTopColor,
+                skinType.qwertyLayoutReleasedKeyBottomColor,
+                skinType.qwertyLayoutReleasedKeyHighlightColor,
+                skinType.qwertyLayoutReleasedKeyShadowColor));
+
+      case PENTA_D_FUNCTION_KEY_BACKGROUND:
+        return createPressableDrawable(
+            new PentaDKeyDrawable(
+                (int) (QWERTY_LEFT_OFFSET * density),
+                (int) (QWERTY_TOP_OFFSET * density),
+                (int) (QWERTY_RIGHT_OFFSET * density),
+                (int) (QWERTY_BOTTOM_OFFSET * density),
+                (int) (skinType.qwertyKeyRoundRadius * density),
+                skinType.qwertyLayoutPressedFunctionKeyTopColor,
+                skinType.qwertyLayoutPressedFunctionKeyBottomColor,
+                skinType.qwertyLayoutPressedFunctionKeyHighlightColor,
+                skinType.qwertyLayoutPressedFunctionKeyShadowColor),
+            new PentaDKeyDrawable(
+                (int) (QWERTY_LEFT_OFFSET * density),
+                (int) (QWERTY_TOP_OFFSET * density),
+                (int) (QWERTY_RIGHT_OFFSET * density),
+                (int) (QWERTY_BOTTOM_OFFSET * density),
+                (int) (skinType.qwertyKeyRoundRadius * density),
+                skinType.qwertyLayoutReleasedFunctionKeyTopColor,
+                skinType.qwertyLayoutReleasedFunctionKeyBottomColor,
+                skinType.qwertyLayoutReleasedFunctionKeyHighlightColor,
+                skinType.qwertyLayoutReleasedFunctionKeyShadowColor));
+
+      case PENTA_U_FUNCTION_KEY_BACKGROUND:
+        return createPressableDrawable(
+            new PentaUKeyDrawable(
+                (int) (QWERTY_LEFT_OFFSET * density),
+                (int) (QWERTY_TOP_OFFSET * density),
+                (int) (QWERTY_RIGHT_OFFSET * density),
+                (int) (QWERTY_BOTTOM_OFFSET * density),
+                (int) (skinType.qwertyKeyRoundRadius * density),
+                skinType.qwertyLayoutPressedFunctionKeyTopColor,
+                skinType.qwertyLayoutPressedFunctionKeyBottomColor,
+                skinType.qwertyLayoutPressedFunctionKeyHighlightColor,
+                skinType.qwertyLayoutPressedFunctionKeyShadowColor),
+            new PentaUKeyDrawable(
+                (int) (QWERTY_LEFT_OFFSET * density),
+                (int) (QWERTY_TOP_OFFSET * density),
+                (int) (QWERTY_RIGHT_OFFSET * density),
+                (int) (QWERTY_BOTTOM_OFFSET * density),
+                (int) (skinType.qwertyKeyRoundRadius * density),
+                skinType.qwertyLayoutReleasedFunctionKeyTopColor,
+                skinType.qwertyLayoutReleasedFunctionKeyBottomColor,
+                skinType.qwertyLayoutReleasedFunctionKeyHighlightColor,
+                skinType.qwertyLayoutReleasedFunctionKeyShadowColor));
+
+      case TWELVEKEYS_CENTER_FLICK:

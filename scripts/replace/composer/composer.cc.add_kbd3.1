@@ -1,0 +1,7 @@
+  const char key = input[0];
+  // if (request_.special_romanji_table() != mozc::commands::Request::QWERTY_MOBILE_TO_...) {
+  if (request_->special_romanji_table() == mozc::commands::Request::NIKO_FLICK_TO_HIRAGANA
+   || request_->special_romanji_table() == mozc::commands::Request::BELL_FLICK_TO_HIRAGANA) {
+    caps_locked = ('A' <= key && key <= 'Z');
+  }
+  const bool alpha_with_shift =

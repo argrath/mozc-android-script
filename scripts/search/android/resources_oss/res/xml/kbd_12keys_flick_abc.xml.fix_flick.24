@@ -1,0 +1,7 @@
+        <Flick mozc:direction="right">
+          <KeyEntity mozc:sourceId="47"
+                     mozc:keyCode="@integer/uchar_exclamation_mark"
+                     mozc:keyIcon="@raw/twelvekeys__alphabet__5__12">
+            <PopUp mozc:popUpIcon="@raw/qwerty__keyicon__exclamation_mark" />
+          </KeyEntity>
+        </Flick>

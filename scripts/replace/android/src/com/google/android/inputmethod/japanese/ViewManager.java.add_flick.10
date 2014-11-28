@@ -1,0 +1,12 @@
+  private final int keycodeMenuDialog;
+  private final int keycodeInputMethod;
+  private final int keycodePreferences;
+  private final int keycodeMushroom;
+  private final int keycodeLayoutL;
+  private final int keycodeLayoutR;
+  private final int keycodeCapsOn;
+  private final int keycodeCapsOff;
+  private final int keycodeAltOn;
+  private final int keycodeAltOff;
+  private final int keycodeHanSpace;
+  private final int keycodeZenSpace;
