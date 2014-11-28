@@ -10,7 +10,7 @@ $ndkpath  = "$wgetdir/$ndkfile"
 $sdkhome  = "$instdir/android-sdk-linux"
 $ndkhome  = "$instdir/android-ndk-r9c"
 $apiver   = 'android-19'
-$filter   = "build-tools-19.0.1,$apiver,platform-tool,tool,extra-android-support"
+$filter   = "build-tools-19.1.0,$apiver,platform-tools,tools,extra-android-support"
 $sdkfonts = "$sdkhome/platforms/$apiver/data/fonts"
 
 Exec {
