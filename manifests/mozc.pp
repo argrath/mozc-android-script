@@ -71,6 +71,7 @@ class packages {
       'python': ;
       'subversion': ;
       'openjdk-6-jdk': ;
+      'git': ;
 
       'pkg-config': ;
       'libqt4-dev': ;
